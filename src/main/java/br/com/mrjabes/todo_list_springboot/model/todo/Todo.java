@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity// Entidade do Banco de Dados
-@Table(name = "Todos")//Nome Da Tabela 
+@Table(name = "todos")//Nome Da Tabela 
 public class Todo {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
