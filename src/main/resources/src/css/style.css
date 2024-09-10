@@ -1,0 +1,133 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url('./catarata.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;/*Colocando uma imagem de fundo centralizada que não se repita e cubra todo o espaço*/
+}
+
+.notas {
+    display: flex;
+    height: 100%;
+}
+
+.notas * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.barra__de__Divisao {
+    border-right: 7px solid whitesmoke;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 1.4em;
+    width: 300px;
+}
+
+.botao_Adicionar {
+    background: white;
+    border: none;
+    border-radius: 17px;
+    color: black;
+    cursor: pointer;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 0.8em 0;
+    width: 100%;
+    opacity: 0.5;
+    border: 2px solid black;
+}
+
+.botao_Adicionar:hover {/*Quando o Mouse Aparecer em Cima*/
+    background: rgb(218, 212, 212);
+}
+.botao_Adicionar:active{ /*quando o botao for clicado*/
+    transform:scale(0.88);
+    color: gray;
+}
+
+.notas_lista-item {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: auto;
+    background-color: white;
+    opacity: 0.65;
+    margin-bottom: 10px;
+    transform:scale(0.95);
+}
+.notas_lista-item:hover{
+    background: rgb(218, 212, 212);
+}
+.notas_lista-item--selecionada:active {
+    background: white;
+    border-radius: 15px;
+    font-weight: bold;
+    transform:scale(0.90);
+    opacity: 0.5;
+    border: 2px solid black;
+}
+
+.notas_pequenas-titulo,
+.notas_pequenas-salvas {/*parte do card com notas*/
+    padding: 10px;
+}
+
+.notas_pequenas-titulo {
+    font-size: 1.2em;
+    color: black;
+    font-style: bold;
+}
+
+.notas_pequenas-corpo {
+    padding: 0 10px;
+    color: rgb(63, 59, 59);
+}
+
+.notas_pequenas-salvas {
+    color: black;
+    font-style: italic;
+    text-align: right;
+}
+
+.notas_visualizacao {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 3em;
+    flex-grow: 1;
+}
+
+.notas_titulo,
+.notas_corpo {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 15px;
+    padding-left: 15px;
+    border: 2px solid black;
+}
+
+.notas_titulo {
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+}
+
+.notas_corpo {
+    flex-grow: 1;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 2em;
+    resize: none;
+    color: black;
+}
+footer {
+    background-color: #168128;
+    color: rgb(85, 235, 16);
+    text-align: center;
+    padding: 1rem;
+}
