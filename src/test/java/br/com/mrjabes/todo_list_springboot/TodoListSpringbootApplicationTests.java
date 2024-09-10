@@ -51,6 +51,14 @@ class TodoListSpringbootApplicationTests {// testes automatizados
 
 	@Test
 	void testCreateTodoFailure() {// Segundo teste é para verificar a criação de uma tarefa com falha
+		setTodo(new Todo("", "", false, null));
+		getWebTestClient()
+			.post()
+			.uri("/todos")
+			.bodyValue(getTodo())
+			.exchange()
+			.expectStatus()
+			.isBadRequest();
 	}
 	public WebTestClient getWebTestClient() {
 		return webTestClient;
