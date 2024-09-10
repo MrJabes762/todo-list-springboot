@@ -17,7 +17,11 @@
 
 ## Como executar: 
 
-1 - Clonar Repositório git; 
+1 - Clonar Repositório git;
+
+```console
+https://github.com/MrJabes762/todo-list-springboot.git
+``` 
 
 2 - Contruir o Projeto 
 
