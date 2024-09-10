@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.mrjabes.todo_list_springboot.service.TodoService;
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +30,7 @@ public class TodoController {
     }
 
     @PostMapping
-    public List<Todo> create(@RequestBody Todo todo){// vai pegar a tarefa e criar 
+    public List<Todo> create(@RequestBody @Valid Todo todo){// vai pegar a tarefa e criar 
         return getTodoService().create(todo);
     }
 

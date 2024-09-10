@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity// Entidade do Banco de Dados
 @Table(name = "todos")//Nome Da Tabela 
@@ -12,11 +13,20 @@ public class Todo {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;// Id do registro
+    @NotBlank// Notação de que o atributo não pode ser branco
     private String nome;
+    @NotBlank
     private String descricao;
     private boolean realizado;
     private Prioridade prioridade;
 
+
+    public Todo(String nome, String descricao, boolean realizado, Prioridade prioridade) {
+        setNome(nome);
+        setDescricao(descricao);
+        setRealizado(realizado);
+        setPrioridade(prioridade);
+    }
 
     public Long getId() {
         return this.id;
