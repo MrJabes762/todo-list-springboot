@@ -18,6 +18,13 @@ public class Todo {
     private Prioridade prioridade;
 
 
+    public Todo(String nome, String descricao, boolean realizado, Prioridade prioridade) {
+        setNome(nome);
+        setDescricao(descricao);
+        setRealizado(realizado);
+        setPrioridade(prioridade);
+    }
+
     public Long getId() {
         return this.id;
     }
