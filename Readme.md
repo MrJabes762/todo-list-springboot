@@ -31,7 +31,7 @@ https://github.com/MrJabes762/todo-list-springboot.git
 3 - Executar  
 
 ```console
-java-jar target/todolist-0.0.1-SNAPSHOT.jar.
+java-jar target/todolist-0.0.1-SNAPSHOT.jar
 ```
 
 ## Extra: 
@@ -39,11 +39,11 @@ java-jar target/todolist-0.0.1-SNAPSHOT.jar.
 A API  poderá ser acessada pela porta padrão 8080:
 
 ```console
-localhost:8080.
+localhost:8080
 ``` 
 
 A Documentação poderá ser visualizada com o Swagger em:
 
 ```console
- "localhost:8080/swagger-ui.html"
+ localhost:8080/swagger-ui.html
 ```
