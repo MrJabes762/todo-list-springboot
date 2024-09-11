@@ -17,15 +17,11 @@ public class Todo {
     private String nome;
     @NotBlank
     private String descricao;
-    private boolean realizado;
-    private Prioridade prioridade;
 
 
-    public Todo(String nome, String descricao, boolean realizado, Prioridade prioridade) {
+    public Todo(String nome, String descricao) {
         setNome(nome);
         setDescricao(descricao);
-        setRealizado(realizado);
-        setPrioridade(prioridade);
     }
 
     public Long getId() {
@@ -51,25 +47,4 @@ public class Todo {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    public boolean isRealizado() {
-        return this.realizado;
-    }
-
-    public boolean getRealizado() {
-        return this.realizado;
-    }
-
-    public void setRealizado(boolean realizado) {
-        this.realizado = realizado;
-    }
-
-    public Prioridade getPrioridade() {
-        return this.prioridade;
-    }
-
-    public void setPrioridade(Prioridade prioridade) {
-        this.prioridade = prioridade;
-    }
-
 }
