@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.web.reactive.server.WebTestClient;
-
-import br.com.mrjabes.todo_list_springboot.model.todo.Prioridade;
 import br.com.mrjabes.todo_list_springboot.model.todo.Todo;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -20,7 +18,7 @@ class TodoListSpringbootApplicationTests {// testes automatizados
 
 	@Test
 	void testCreateTodoSucess() {// Primeiro teste é para verificar a criação de uma tarefa com sucesso 
-		setTodo(new Todo("Tarefa 1", "descricao da tarefa", false, Prioridade.Alta));
+		setTodo(new Todo("Tarefa 1", "descricao da tarefa"));
 		getWebTestClient()
 		.post()
 		.uri("/todos")
@@ -31,9 +29,7 @@ class TodoListSpringbootApplicationTests {// testes automatizados
 		.jsonPath("$").isArray()
 		.jsonPath("$.length()").isEqualTo(1)
 		.jsonPath("$[0].nome").isEqualTo(getTodo().getNome())
-		.jsonPath("$[0].descricao").isEqualTo(getTodo().getDescricao())
-		.jsonPath("$[0].realizado").isEqualTo(getTodo().getRealizado())
-		.jsonPath("$[0].prioridade").isEqualTo(getTodo().getPrioridade());
+		.jsonPath("$[0].descricao").isEqualTo(getTodo().getDescricao());
 		/*  
 			1- chamar endpoint getWebTestClient().post()
 			2- mapeado para todos  - .uri("/todos")
@@ -51,7 +47,7 @@ class TodoListSpringbootApplicationTests {// testes automatizados
 
 	@Test
 	void testCreateTodoFailure() {// Segundo teste é para verificar a criação de uma tarefa com falha
-		setTodo(new Todo("", "", false, null));
+		setTodo(new Todo("", ""));
 		getWebTestClient()
 			.post()
 			.uri("/todos")
