@@ -8,6 +8,8 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 import com.engenhariasoftware.agendario.agendario.model.Agendario;
 
+
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class AgendarioApplicationTests {
 
@@ -59,6 +61,33 @@ class AgendarioApplicationTests {
 			.exchange()
 			.expectStatus()
 			.isBadRequest();
+	}
+	@Test
+	void testUpdateTodo() {
+		Agendario todo = new Agendario("Tarefa Atualizada", "descricao atualizada", true, "Baixa", "12/12/2022");
+		webTestClient.put()
+			.uri("/agendas")
+			.bodyValue(todo)
+			.exchange()
+			.expectStatus().isOk()
+			.expectBody()
+			.jsonPath("$[0].nome").isEqualTo("Tarefa Atualizada");
+	}
+	@Test
+	void testGetTodos() {
+		webTestClient.get()
+			.uri("/agendas")
+			.exchange()
+			.expectStatus().isOk()
+			.expectBody()
+			.jsonPath("$").isArray();
+	}
+	@Test
+	void testDeleteTodo() {
+		webTestClient.delete()
+			.uri("/agendas/{id}", 1)
+			.exchange()
+			.expectStatus().isOk();
 	}
 	public WebTestClient getWebTestClient() {
 		return webTestClient;

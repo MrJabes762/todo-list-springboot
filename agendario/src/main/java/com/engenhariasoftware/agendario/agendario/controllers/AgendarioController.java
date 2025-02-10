@@ -38,7 +38,7 @@ public class AgendarioController {
     }
 
     @PutMapping
-    public List<Agendario> update (@RequestBody Agendario todo){// vai pegar a tarefa e fazer o update 
+    public List<Agendario> update (@RequestBody @Valid Agendario todo){// vai pegar a tarefa e fazer o update 
         return getAgendarioService().update(todo);
     }
 
