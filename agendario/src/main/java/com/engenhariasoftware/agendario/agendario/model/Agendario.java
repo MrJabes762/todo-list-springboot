@@ -19,7 +19,7 @@ public class Agendario {
     @NotNull
     private boolean realizado;
     @NotNull
-    private Prioridade prioridade;
+    private String prioridade;
     @NotBlank
     private String data;
 
@@ -28,7 +28,7 @@ public class Agendario {
     }
 
 
-    public Agendario(String nome, String descricao, boolean realizado, Prioridade prioridade, String data) {
+    public Agendario(String nome, String descricao, boolean realizado, String prioridade, String data) {
         setNome(nome);
         setDescricao(descricao);
         setRealizado(realizado);
@@ -73,11 +73,11 @@ public class Agendario {
         this.realizado = realizado;
     }
 
-    public Prioridade getPrioridade() {
+    public String getPrioridade() {
         return this.prioridade;
     }
 
-    public void setPrioridade(Prioridade prioridade) {
+    public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
     }
 

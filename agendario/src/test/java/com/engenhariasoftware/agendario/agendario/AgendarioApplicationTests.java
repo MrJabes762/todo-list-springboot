@@ -20,7 +20,7 @@ class AgendarioApplicationTests {
 
 	@Test
 	void testCreateTodoSucess() {// Primeiro teste é para verificar a criação de uma tarefa com sucesso 
-		setTodo(new Agendario("Tarefa 1", "descricao da tarefa", false, Prioridade.Alta,"10/10/2014"));
+		setTodo(new Agendario("Tarefa 1", "descricao da tarefa", false, "Alta","10/10/2014"));
 		getWebTestClient()
 		.post()
 		.uri("/agendas")
@@ -52,7 +52,7 @@ class AgendarioApplicationTests {
 
 	@Test
 	void testCreateTodoFailure() {// Segundo teste é para verificar a criação de uma tarefa com falha
-		setTodo(new Agendario("", "", false, Prioridade.Alta,""));
+		setTodo(new Agendario("", "", false, "Alta",""));
 		getWebTestClient()
 			.post()
 			.uri("/agendas")
