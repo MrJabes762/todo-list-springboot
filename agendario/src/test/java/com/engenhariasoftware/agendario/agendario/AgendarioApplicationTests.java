@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import com.engenhariasoftware.agendario.agendario.model.Agendario;
-import com.engenhariasoftware.agendario.agendario.model.Prioridade;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class AgendarioApplicationTests {
